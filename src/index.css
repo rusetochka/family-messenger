@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body, #root { height: 100%; overflow: hidden; }
+body { background-color: #f3f4f6; color: #111827; font-size: 16px; }
+
+/* Safe-area padding for iOS notch / home indicator */
+.safe-top    { padding-top:    env(safe-area-inset-top, 0px); }
+.safe-bottom { padding-bottom: calc(1rem + env(safe-area-inset-bottom, 0px)); }
+.safe-x      { padding-left:  calc(1.25rem + env(safe-area-inset-left, 0px));
+               padding-right: calc(1.25rem + env(safe-area-inset-right, 0px)); }
+
+/* ── Liquid-glass design tokens ── */
+.glass {
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(24px) saturate(1.6);
+  -webkit-backdrop-filter: blur(24px) saturate(1.6);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+.glass-strong {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(32px) saturate(1.8);
+  -webkit-backdrop-filter: blur(32px) saturate(1.8);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+.glass-card {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(28px) saturate(1.7);
+  -webkit-backdrop-filter: blur(28px) saturate(1.7);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 1.25rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+.glass-bubble {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(16px) saturate(1.4);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.45);
+}
+.glass-bubble-own {
+  background: rgba(244, 63, 94, 0.78);
+  backdrop-filter: blur(16px) saturate(1.4);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 2px 12px rgba(244, 63, 94, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* The persistent demo bar reserves its own row above the original app. */
+:root{--demo-bar-height:66px}body{padding-top:var(--demo-bar-height)}.h-dvh{height:calc(100dvh - var(--demo-bar-height))!important}.min-h-screen{min-height:calc(100dvh - var(--demo-bar-height))!important}.demo-bar{position:fixed;top:0;left:0;right:0;z-index:100;background:#fff;border-bottom:1px solid #eadde0;min-height:var(--demo-bar-height);padding:10px 20px;display:flex;align-items:center;justify-content:space-between;gap:15px;font-family:system-ui,sans-serif}.demo-bar strong{display:block;color:#8c1739;font-size:12px;letter-spacing:.2px}.demo-bar span{display:block;font-size:11px;color:#74616a;margin-top:3px}.demo-actions{display:flex;gap:6px;flex-wrap:wrap}.demo-actions button{border:1px solid #ecdde3;border-radius:7px;padding:6px 10px;font-size:11px;color:#8c1739;background:#fff9fb}.demo-actions button:hover{background:#ffe7ee}.demo-notice{position:fixed;top:calc(var(--demo-bar-height) + 10px);left:50%;transform:translateX(-50%);z-index:150;max-width:650px;width:calc(100% - 28px);background:#fff5de;border:1px solid #eed49e;border-radius:10px;padding:14px 18px;display:flex;gap:20px;justify-content:space-between;font-size:12px;color:#775216}.demo-notice button{font-size:20px}@media(max-width:640px){:root{--demo-bar-height:104px}.demo-bar{padding:10px 14px;flex-direction:column;align-items:flex-start;gap:7px}.demo-bar span{font-size:10px}.demo-actions button{font-size:10px;padding:4px 9px}}
